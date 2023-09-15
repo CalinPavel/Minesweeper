@@ -154,6 +154,24 @@ function pairExists(arr, x, y) {
 }
 
 
+function readFlag(){
+    const xInput = document.getElementById("xParam");
+    const yInput = document.getElementById("yParam");
+
+    const getValuesButton = document.getElementById("getValuesButtonFlags");
+
+    getValuesButton.addEventListener("click", function () {
+        const xValue = xInput.value;
+        const yValue = yInput.value;
+        flaggedSquares.push(new Pair(xValue,yValue));
+        console.log("Flag added!")
+        console.log("x:", xValue);
+        console.log("y:", yValue);
+    });
+}
+document.addEventListener("DOMContentLoaded", readFlag);
+
+
 function buildGrid() {
     const gridContainer = document.getElementById('minesweeper-grid');
     for (let i = 0; i < colCount; i++) {
@@ -249,3 +267,5 @@ function reveal(row, col) {
         }
     }
 }
+
+
